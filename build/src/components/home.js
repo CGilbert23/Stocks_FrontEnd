@@ -26,7 +26,7 @@ const Home = () => {
     const currentDate = `${mm}/${dd}/${yyyy}`
   
     /*State Management : All Exisitng Data */
-    const {data,setData,isPending,error} = useFetch(`${process.env.URL}/stocks`)
+    const {data,setData,isPending,error} = useFetch(`https://stonks-goup.herokuapp.com/stocks`)
 
         /*State Management: New Vehicle Form */
         const initialFormState = {
@@ -51,7 +51,7 @@ const Home = () => {
           event.preventDefault();
           const newStock = (formData)
           console.log(newStock)
-          const url = `${process.env.URL}/stocks`
+          const url = `https://stonks-goup.herokuapp.com/stocks`
           const requestOptions = {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -75,7 +75,7 @@ const Home = () => {
        
   
         const handleDelete = (stock_id) => {
-          fetch(`${process.env.URL}/stocks/${stock_id}`, {
+          fetch(`https://stonks-goup.herokuapp.com//stocks/${stock_id}`, {
             method: 'DELETE'
           })
           .then(response => console.log(`Deleted Car, ${stock_id}`))
