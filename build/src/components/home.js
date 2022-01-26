@@ -26,7 +26,7 @@ const Home = () => {
     const currentDate = `${mm}/${dd}/${yyyy}`
   
     /*State Management : All Exisitng Data */
-    const {data,setData,isPending,error} = useFetch(`${proces.env.BASE_URL}`)
+    const {data,setData,isPending,error} = useFetch(`${process.env.BASE_URL}`)
 
         /*State Management: New Vehicle Form */
         const initialFormState = {
