@@ -26,7 +26,7 @@ const Home = () => {
     const currentDate = `${mm}/${dd}/${yyyy}`
   
     /*State Management : All Exisitng Data */
-    const {data,setData,isPending,error} = useFetch(`${process.env.BASE_URL}`)
+    const {data,setData,isPending,error} = useFetch(`${process.env.REACT_APP_BASE_URL}`)
 
         /*State Management: New Vehicle Form */
         const initialFormState = {
@@ -51,7 +51,7 @@ const Home = () => {
           event.preventDefault();
           const newStock = (formData)
           console.log(newStock)
-          const url = `${process.env.BASE_URL}`
+          const url = `${process.env.REACT_APP_BASE_URL}`
           const requestOptions = {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -75,7 +75,7 @@ const Home = () => {
        
   
         const handleDelete = (stock_id) => {
-          fetch(`${process.env.BASE_URL}/${stock_id}`, {
+          fetch(`${process.env.REACT_APP_BASE_URL}/${stock_id}`, {
             method: 'DELETE'
           })
           .then(response => console.log(`Deleted Car, ${stock_id}`))
